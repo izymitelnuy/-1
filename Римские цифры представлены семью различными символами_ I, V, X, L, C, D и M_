@@ -1,0 +1,16 @@
+
+rom = {'IV': 4, 'IX': 9, 'XL': 40, 'XC': 90, 'CD': 400, 'CM': 900}
+rom_2 = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
+example = input("Введите римское число: ")
+result = 0
+for key in rom:
+    if key in example:
+        example = example.replace(key,'')
+        result += rom[key]
+for key_2 in rom_2:
+    if key_2 in example:
+        count = example.count(key_2)
+        example = example.replace(key_2, '')
+        result += rom_2[key_2] * count
+print(result)
